@@ -62,6 +62,7 @@
     //login and password text fields
     self.loginTextField = [[RegisterTextField alloc] initWithPlaceholder:@"Login"];
     self.passwordTextField = [[RegisterTextField alloc] initWithPlaceholder:@"Password"];
+    [self.passwordTextField setSecureTextEntry:YES];
     
     //authorizeButton
     self.authorizeButton = [[CustomButton alloc] init];
