@@ -44,6 +44,7 @@
     [self hideKeyboardByTap];
     [self handleTextFieldsEditing];
     [self handleAuthorizeButton];
+    [self hanleNumberButtons];
 }
 
 
@@ -214,8 +215,8 @@
 
 - (void)authorizeButtonHandler {
     
-    BOOL loginIsRight = [self.loginTextField.text isEqual: @"username"];
-    BOOL passwordIsRight = [self.passwordTextField.text isEqual: @"password"];
+    BOOL loginIsRight = [self.loginTextField.text isEqualToString: @"username"];
+    BOOL passwordIsRight = [self.passwordTextField.text isEqualToString: @"password"];
     
     if (loginIsRight && passwordIsRight) {
         [self.loginTextField setRegisterTextFieldForState:RegisterTextFieldStateSuccess];
@@ -232,5 +233,33 @@
     }
 }
 
+// MARK: - Secure view handlers
+
+- (void)hanleNumberButtons {
+    [self.firstNumberButton addTarget:self action:@selector(numberButtonHandler:) forControlEvents:UIControlEventTouchUpInside];
+    [self.secondNumberButton addTarget:self action:@selector(numberButtonHandler:) forControlEvents:UIControlEventTouchUpInside];
+    [self.thirdNumberButton addTarget:self action:@selector(numberButtonHandler:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)numberButtonHandler:(UIButton *)sender {
+    
+    //add number
+    if ([self.pinLabel.text isEqualToString: @"_"]) {
+        self.pinLabel.text = sender.titleLabel.text;
+    } else {
+        self.pinLabel.text = [self.pinLabel.text stringByAppendingString:sender.titleLabel.text];
+    }
+    
+    //check if pinLabel is full
+    if (self.pinLabel.text.length > 2) {
+        if ([self.pinLabel.text isEqualToString:@"132"]) {
+            [self.secureView setSecureViewForState:SecureViewStateSuccess];
+            //add alert
+        } else {
+            [self.secureView setSecureViewForState:SecureViewStateError];
+            self.pinLabel.text = @"";
+        }
+    }
+}
 
 @end
