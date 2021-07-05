@@ -24,6 +24,7 @@
 @property (nonatomic, strong) UIButton *firstNumberButton;
 @property (nonatomic, strong) UIButton *secondNumberButton;
 @property (nonatomic, strong) UIButton *thirdNumberButton;
+@property (nonatomic, strong) UIAlertController *alert;
 
 @end
 
@@ -245,6 +246,7 @@
     
     //add number
     if ([self.pinLabel.text isEqualToString: @"_"]) {
+        [self.secureView setSecureViewForState:SecureViewStateDefault];
         self.pinLabel.text = sender.titleLabel.text;
     } else {
         self.pinLabel.text = [self.pinLabel.text stringByAppendingString:sender.titleLabel.text];
@@ -257,7 +259,7 @@
             //add alert
         } else {
             [self.secureView setSecureViewForState:SecureViewStateError];
-            self.pinLabel.text = @"";
+            self.pinLabel.text = @"_";
         }
     }
 }
