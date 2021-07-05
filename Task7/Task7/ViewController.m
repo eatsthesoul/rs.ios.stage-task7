@@ -42,6 +42,7 @@
     self.passwordTextField.delegate = self;
     
     [self hideKeyboardByTap];
+    [self handleAuthorizeButton];
 }
 
 
@@ -184,5 +185,32 @@
     }
     return YES;
 }
+
+// MARK: - Authorize Button Handlers
+
+- (void)handleAuthorizeButton {
+    [self.authorizeButton addTarget:self action:@selector(authorizeButtonHandler) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)authorizeButtonHandler {
+    
+    BOOL loginIsRight = [self.loginTextField.text isEqual: @"username"];
+    BOOL passwordIsRight = [self.passwordTextField.text isEqual: @"password"];
+    
+    if (loginIsRight && passwordIsRight) {
+        [self.loginTextField setRegisterTextFieldForState:RegisterTextFieldStateSuccess];
+        [self.passwordTextField setRegisterTextFieldForState:RegisterTextFieldStateSuccess];
+        [self.authorizeButton setSuccessButton];
+        [self.secureView setHidden:NO];
+    } else {
+        if (!loginIsRight) {
+            [self.loginTextField setRegisterTextFieldForState:RegisterTextFieldStateError];
+        }
+        if (!passwordIsRight) {
+            [self.passwordTextField setRegisterTextFieldForState:RegisterTextFieldStateError];
+        }
+    }
+}
+
 
 @end

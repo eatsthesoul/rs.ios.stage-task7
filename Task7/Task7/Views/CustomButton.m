@@ -32,6 +32,11 @@
     return self;
 }
 
+- (void)setSuccessButton {
+    self.alpha = 0.5;
+    [self setEnabled:NO];
+}
+
 - (void)setHighlighted:(BOOL)highlighted {
     [super setHighlighted:highlighted];
     

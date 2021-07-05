@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CustomButton : UIButton
 
+- (void)setSuccessButton;
+
 @end
 
 NS_ASSUME_NONNULL_END
