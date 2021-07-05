@@ -8,6 +8,12 @@
 #import "RegisterTextField.h"
 #import "UIColor+HexColor.h"
 
+@interface RegisterTextField ()
+
+@property (nonatomic, readwrite) RegisterTextFieldState textFieldState;
+
+@end
+
 @implementation RegisterTextField
 
 - (instancetype)init {
@@ -35,16 +41,19 @@
 - (void)setRegisterTextFieldForState:(RegisterTextFieldState)state {
     switch (state) {
         case RegisterTextFieldStateActive:
+            self.textFieldState = RegisterTextFieldStateActive;
             self.layer.borderColor = [UIColor colorFromHexString:@"#4C5C68"].CGColor;
             self.alpha = 1;
             [self setEnabled:YES];
             break;
         case RegisterTextFieldStateError:
+            self.textFieldState = RegisterTextFieldStateError;
             self.layer.borderColor = [UIColor colorFromHexString:@"C20114"].CGColor;
             self.alpha = 1;
             [self setEnabled:YES];
             break;
         case RegisterTextFieldStateSuccess:
+            self.textFieldState = RegisterTextFieldStateSuccess;
             self.layer.borderColor = [UIColor colorFromHexString:@"91C7B1"].CGColor;
             self.alpha = 0.5;
             [self setEnabled:NO];

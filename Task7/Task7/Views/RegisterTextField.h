@@ -17,6 +17,8 @@ typedef NS_OPTIONS(NSUInteger, RegisterTextFieldState) {
 
 @interface RegisterTextField : UITextField
 
+@property (nonatomic, readonly) RegisterTextFieldState textFieldState;
+
 - (instancetype)initWithPlaceholder:(NSString *)placeholder;
 - (void)setRegisterTextFieldForState:(RegisterTextFieldState)state;
 

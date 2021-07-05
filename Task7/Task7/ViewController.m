@@ -42,6 +42,7 @@
     self.passwordTextField.delegate = self;
     
     [self hideKeyboardByTap];
+    [self handleTextFieldsEditing];
     [self handleAuthorizeButton];
 }
 
@@ -176,6 +177,8 @@
     return YES;
 }
 
+// MARK: - Text fields handlers
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
     NSCharacterSet *allowedCharacters = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"];
@@ -185,6 +188,24 @@
     }
     return YES;
 }
+
+- (void)handleTextFieldsEditing {
+    [self.loginTextField addTarget:self action:@selector(handleTextFieldDidChange) forControlEvents:UIControlEventEditingChanged];
+    [self.passwordTextField addTarget:self action:@selector(handleTextFieldDidChange) forControlEvents:UIControlEventEditingChanged];
+}
+
+- (void)handleTextFieldDidChange {
+    if (self.loginTextField.isFirstResponder) { [self textFieldDidChange:self.loginTextField]; }
+    if (self.passwordTextField.isFirstResponder) { [self textFieldDidChange:self.passwordTextField]; }
+}
+
+- (void)textFieldDidChange:(RegisterTextField *)textField {
+    if (textField.textFieldState == RegisterTextFieldStateError) {
+        [textField setText:@""];
+        [textField setRegisterTextFieldForState:RegisterTextFieldStateActive];
+    }
+}
+
 
 // MARK: - Authorize Button Handlers
 
