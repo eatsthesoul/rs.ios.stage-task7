@@ -183,10 +183,10 @@
     
     NSCharacterSet *allowedCharacters = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"];
     
-    if([string rangeOfCharacterFromSet:allowedCharacters].location == NSNotFound){
-        return NO;
+    if([string rangeOfCharacterFromSet:allowedCharacters.invertedSet].location == NSNotFound){
+        return YES;
     }
-    return YES;
+    return NO;
 }
 
 - (void)handleTextFieldsEditing {
