@@ -23,6 +23,7 @@
         self.leftViewMode = UITextFieldViewModeAlways;
         self.layer.borderWidth = 1.5;
         self.layer.cornerRadius = 5;
+        self.autocapitalizationType = UITextAutocapitalizationTypeNone;
         [self setAutocorrectionType:UITextAutocorrectionTypeNo];
         [self setRegisterTextFieldForState:RegisterTextFieldStateActive];
         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
