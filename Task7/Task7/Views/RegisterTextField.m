@@ -46,6 +46,7 @@
             self.layer.borderColor = [UIColor colorFromHexString:@"#4C5C68"].CGColor;
             self.alpha = 1;
             [self setEnabled:YES];
+            [self setText:@""];
             break;
         case RegisterTextFieldStateError:
             self.textFieldState = RegisterTextFieldStateError;

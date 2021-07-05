@@ -201,7 +201,6 @@
 
 - (void)textFieldDidChange:(RegisterTextField *)textField {
     if (textField.textFieldState == RegisterTextFieldStateError) {
-        [textField setText:@""];
         [textField setRegisterTextFieldForState:RegisterTextFieldStateActive];
     }
 }
