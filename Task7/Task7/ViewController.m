@@ -241,14 +241,15 @@
     //add number
     if ([self.pinLabel.text isEqualToString: @"_"]) {
         [self.secureView setSecureViewForState:SecureViewStateDefault];
-        self.pinLabel.text = sender.titleLabel.text;
+        self.pinLabel.text = [sender.titleLabel.text stringByAppendingString:@" "];
     } else {
-        self.pinLabel.text = [self.pinLabel.text stringByAppendingString:sender.titleLabel.text];
+        self.pinLabel.text = [[self.pinLabel.text stringByAppendingString:sender.titleLabel.text] stringByAppendingString:@" "];
     }
     
     //check if pinLabel is full
-    if (self.pinLabel.text.length > 2) {
-        if ([self.pinLabel.text isEqualToString:@"132"]) {
+    if (self.pinLabel.text.length > 5) {
+        self.pinLabel.text = [self.pinLabel.text substringToIndex:self.pinLabel.text.length - 1];
+        if ([self.pinLabel.text isEqualToString:@"1 3 2"]) {
             [self.secureView setSecureViewForState:SecureViewStateSuccess];
             [self presentAlertVC];
         } else {
