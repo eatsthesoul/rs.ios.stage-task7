@@ -222,7 +222,7 @@
     if (loginIsRight && passwordIsRight) {
         [self.loginTextField setRegisterTextFieldForState:RegisterTextFieldStateSuccess];
         [self.passwordTextField setRegisterTextFieldForState:RegisterTextFieldStateSuccess];
-        [self.authorizeButton setSuccessButton];
+        [self.authorizeButton setSuccessState];
         [self.secureView setHidden:NO];
     } else {
         if (!loginIsRight) {
@@ -256,12 +256,33 @@
     if (self.pinLabel.text.length > 2) {
         if ([self.pinLabel.text isEqualToString:@"132"]) {
             [self.secureView setSecureViewForState:SecureViewStateSuccess];
-            //add alert
+            [self presentAlertVC];
         } else {
             [self.secureView setSecureViewForState:SecureViewStateError];
             self.pinLabel.text = @"_";
         }
     }
+}
+
+//MARK: - Alert
+
+- (void)presentAlertVC {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Welcome"
+                                                                   message:@"You are successfully authorized!"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Refresh" style:UIAlertActionStyleDestructive
+                                                          handler:^(UIAlertAction * action) {
+        [self.loginTextField setRegisterTextFieldForState:RegisterTextFieldStateActive];
+        [self.passwordTextField setRegisterTextFieldForState:RegisterTextFieldStateActive];
+        [self.authorizeButton setDefaultState];
+        [self.secureView setSecureViewForState:SecureViewStateDefault];
+        self.pinLabel.text = @"_";
+        [self.secureView setHidden:YES];
+    }];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end

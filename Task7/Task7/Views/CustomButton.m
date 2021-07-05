@@ -32,9 +32,14 @@
     return self;
 }
 
-- (void)setSuccessButton {
+- (void)setSuccessState {
     self.alpha = 0.5;
     [self setEnabled:NO];
+}
+
+- (void)setDefaultState {
+    self.alpha = 1;
+    [self setEnabled:YES];
 }
 
 - (void)setHighlighted:(BOOL)highlighted {
