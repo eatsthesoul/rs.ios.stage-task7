@@ -52,6 +52,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F46C48826937BDF00104C8E /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				4FDA8C922691C85E00D5B684 /* CustomButton.h */,
+				4FDA8C932691C85E00D5B684 /* CustomButton.m */,
+			);
+			path = CustomButton;
+			sourceTree = "<group>";
+		};
+		4F46C48926937BF100104C8E /* NumberButton */ = {
+			isa = PBXGroup;
+			children = (
+				4FDA8C9A269252DA00D5B684 /* NumberButton.h */,
+				4FDA8C9B269252DA00D5B684 /* NumberButton.m */,
+			);
+			path = NumberButton;
+			sourceTree = "<group>";
+		};
+		4F46C48A26937C0600104C8E /* SecureView */ = {
+			isa = PBXGroup;
+			children = (
+				4FDA8C9D2692F54800D5B684 /* SecureView.h */,
+				4FDA8C9E2692F54800D5B684 /* SecureView.m */,
+			);
+			path = SecureView;
+			sourceTree = "<group>";
+		};
+		4F46C48B26937C1300104C8E /* RegisterTextField */ = {
+			isa = PBXGroup;
+			children = (
+				4FDA8CA0269319C200D5B684 /* RegisterTextField.h */,
+				4FDA8CA1269319C200D5B684 /* RegisterTextField.m */,
+			);
+			path = RegisterTextField;
+			sourceTree = "<group>";
+		};
 		4FDA8C692690979D00D5B684 = {
 			isa = PBXGroup;
 			children = (
@@ -97,14 +133,10 @@
 		4FDA8C992691CC9100D5B684 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4FDA8C922691C85E00D5B684 /* CustomButton.h */,
-				4FDA8C932691C85E00D5B684 /* CustomButton.m */,
-				4FDA8C9A269252DA00D5B684 /* NumberButton.h */,
-				4FDA8C9B269252DA00D5B684 /* NumberButton.m */,
-				4FDA8C9D2692F54800D5B684 /* SecureView.h */,
-				4FDA8C9E2692F54800D5B684 /* SecureView.m */,
-				4FDA8CA0269319C200D5B684 /* RegisterTextField.h */,
-				4FDA8CA1269319C200D5B684 /* RegisterTextField.m */,
+				4F46C48826937BDF00104C8E /* CustomButton */,
+				4F46C48926937BF100104C8E /* NumberButton */,
+				4F46C48A26937C0600104C8E /* SecureView */,
+				4F46C48B26937C1300104C8E /* RegisterTextField */,
 			);
 			path = Views;
 			sourceTree = "<group>";
