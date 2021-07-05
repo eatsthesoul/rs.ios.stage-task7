@@ -12,6 +12,11 @@
 		4FDA8C822690979E00D5B684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FDA8C812690979E00D5B684 /* Assets.xcassets */; };
 		4FDA8C852690979E00D5B684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FDA8C832690979E00D5B684 /* LaunchScreen.storyboard */; };
 		4FDA8C882690979E00D5B684 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA8C872690979E00D5B684 /* main.m */; };
+		4FDA8C942691C85E00D5B684 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA8C932691C85E00D5B684 /* CustomButton.m */; };
+		4FDA8C972691CBC700D5B684 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA8C962691CBC700D5B684 /* UIColor+HexColor.m */; };
+		4FDA8C9C269252DA00D5B684 /* NumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA8C9B269252DA00D5B684 /* NumberButton.m */; };
+		4FDA8C9F2692F54800D5B684 /* SecureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA8C9E2692F54800D5B684 /* SecureView.m */; };
+		4FDA8CA2269319C200D5B684 /* RegisterTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA8CA1269319C200D5B684 /* RegisterTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,16 @@
 		4FDA8C842690979E00D5B684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FDA8C862690979E00D5B684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FDA8C872690979E00D5B684 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4FDA8C922691C85E00D5B684 /* CustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
+		4FDA8C932691C85E00D5B684 /* CustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		4FDA8C952691CBC700D5B684 /* UIColor+HexColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
+		4FDA8C962691CBC700D5B684 /* UIColor+HexColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
+		4FDA8C9A269252DA00D5B684 /* NumberButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberButton.h; sourceTree = "<group>"; };
+		4FDA8C9B269252DA00D5B684 /* NumberButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberButton.m; sourceTree = "<group>"; };
+		4FDA8C9D2692F54800D5B684 /* SecureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecureView.h; sourceTree = "<group>"; };
+		4FDA8C9E2692F54800D5B684 /* SecureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecureView.m; sourceTree = "<group>"; };
+		4FDA8CA0269319C200D5B684 /* RegisterTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterTextField.h; sourceTree = "<group>"; };
+		4FDA8CA1269319C200D5B684 /* RegisterTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +75,38 @@
 				4FDA8C762690979D00D5B684 /* AppDelegate.m */,
 				4FDA8C7B2690979D00D5B684 /* ViewController.h */,
 				4FDA8C7C2690979D00D5B684 /* ViewController.m */,
+				4FDA8C992691CC9100D5B684 /* Views */,
+				4FDA8C982691CC7300D5B684 /* Categories */,
 				4FDA8C812690979E00D5B684 /* Assets.xcassets */,
 				4FDA8C832690979E00D5B684 /* LaunchScreen.storyboard */,
 				4FDA8C862690979E00D5B684 /* Info.plist */,
 				4FDA8C872690979E00D5B684 /* main.m */,
 			);
 			path = Task7;
+			sourceTree = "<group>";
+		};
+		4FDA8C982691CC7300D5B684 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4FDA8C952691CBC700D5B684 /* UIColor+HexColor.h */,
+				4FDA8C962691CBC700D5B684 /* UIColor+HexColor.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		4FDA8C992691CC9100D5B684 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4FDA8C922691C85E00D5B684 /* CustomButton.h */,
+				4FDA8C932691C85E00D5B684 /* CustomButton.m */,
+				4FDA8C9A269252DA00D5B684 /* NumberButton.h */,
+				4FDA8C9B269252DA00D5B684 /* NumberButton.m */,
+				4FDA8C9D2692F54800D5B684 /* SecureView.h */,
+				4FDA8C9E2692F54800D5B684 /* SecureView.m */,
+				4FDA8CA0269319C200D5B684 /* RegisterTextField.h */,
+				4FDA8CA1269319C200D5B684 /* RegisterTextField.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +177,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FDA8C942691C85E00D5B684 /* CustomButton.m in Sources */,
+				4FDA8C9F2692F54800D5B684 /* SecureView.m in Sources */,
 				4FDA8C7D2690979D00D5B684 /* ViewController.m in Sources */,
+				4FDA8C9C269252DA00D5B684 /* NumberButton.m in Sources */,
+				4FDA8CA2269319C200D5B684 /* RegisterTextField.m in Sources */,
+				4FDA8C972691CBC700D5B684 /* UIColor+HexColor.m in Sources */,
 				4FDA8C772690979D00D5B684 /* AppDelegate.m in Sources */,
 				4FDA8C882690979E00D5B684 /* main.m in Sources */,
 			);
