@@ -12,7 +12,7 @@
 #import "SecureView.h"
 #import "RegisterTextField.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) UILabel *rsSchoolLabel;
 @property (nonatomic, strong) RegisterTextField *loginTextField;
@@ -34,8 +34,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setupViews];
     [self setupLayout];
+
+    self.loginTextField.delegate = self;
+    self.passwordTextField.delegate = self;
+    
+    [self hideKeyboardByTap];
 }
 
 
@@ -148,5 +154,25 @@
         [self.stackView.bottomAnchor constraintEqualToAnchor:self.secureView.bottomAnchor constant:-15]
     ]];
 }
+
+// MARK: - Keyboard handlers
+
+- (void)hideKeyboardByTap {
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void)dismissKeyboard {
+    [self.loginTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self dismissKeyboard];
+    return YES;
+}
+
 
 @end
