@@ -175,5 +175,14 @@
     return YES;
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    NSCharacterSet *allowedCharacters = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+    
+    if([string rangeOfCharacterFromSet:allowedCharacters].location == NSNotFound){
+        return NO;
+    }
+    return YES;
+}
 
 @end
