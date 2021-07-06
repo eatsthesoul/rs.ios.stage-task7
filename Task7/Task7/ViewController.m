@@ -192,11 +192,11 @@
 }
 
 - (void)handleTextFieldsEditing {
-    [self.loginTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-    [self.passwordTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.loginTextField addTarget:self action:@selector(textFieldDidTouch:) forControlEvents:UIControlEventAllTouchEvents];
+    [self.passwordTextField addTarget:self action:@selector(textFieldDidTouch:) forControlEvents:UIControlEventAllTouchEvents];
 }
 
-- (void)textFieldDidChange:(RegisterTextField *)sender {
+- (void)textFieldDidTouch:(RegisterTextField *)sender {
     if (sender.textFieldState == RegisterTextFieldStateError) {
         [sender setRegisterTextFieldForState:RegisterTextFieldStateActive];
     }
